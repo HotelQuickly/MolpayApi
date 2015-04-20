@@ -1,7 +1,7 @@
-molpay-api:
+molpayApi:
 	apiBaseUrl: https://www.onlinepayment.com.my/MOLPay
 	domain: hotelquicklyltd
 	verifyKey: 4af0705ce8af555ec041d8ef78d3e448
 
 extensions:
-	molpay-api: \HQ\MolpayApi\MolpayApiExtension
+	molpayApi: \HQ\MolpayApi\MolpayApiExtension
