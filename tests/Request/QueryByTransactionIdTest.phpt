@@ -26,16 +26,14 @@ class QueryByTransactionIdTest extends BaseTestCase
 	public function testQueryByTransactionId()
 	{
 		$response = $this->molpayManager->send(RequestFactory::QUERY_BY_TRANSACTION_ID, function(QueryByTransactionId $request) {
-			$request->setParam('txnID', '1234567890')
+			$request->setParam('txID', '4488542')
+				->setParam('amount', '2.00')
 				->setParam('domain', $request->getDomain())
 				->setParam('skey', $request->getSKey());
 		});
-//		var_dump($response);
-//
-//		Assert::equal('1234567890', $response['TxnID']);
-//		Assert::equal('17', $response['StatCode']); // Transaction not found
-
-		Assert::same(1, 1); // TODO: assert test
+		
+		Assert::equal('4488542', $response['TranID']);
+		Assert::equal('11', $response['StatCode']);
 	}
 }
 

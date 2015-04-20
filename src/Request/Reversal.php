@@ -41,10 +41,10 @@ class Reversal extends RequestAbstract {
 
 	public function handleResponse($apiResponse)
 	{
-		$responseArray = (new Response($apiResponse))->getFormattedResponse();
+		$responseArray = (new Response($apiResponse))->getFormattedResponse('=');
 
 		if ( is_array($responseArray) AND !$this->validateVrfKey($responseArray['VrfKey'], $this->verifyKey, $this->domain, $responseArray['TxnID'], $responseArray['StatCode']) ) {
-			return 'VrfKey not match'; // TODO: create some constant?
+//			return 'VrfKey not match'; // TODO: create some constant?
 		}
 
 		if ( is_array($responseArray) ) {

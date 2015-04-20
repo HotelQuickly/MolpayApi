@@ -13,7 +13,8 @@ class QueryByTransactionId extends RequestAbstract {
 	protected $_method = self::METHOD_GET;
 
 	protected $_mandatoryParams = [
-		'txnID',
+		'txID',
+		'amount',
 		'domain',
 		'skey'
 	];
@@ -25,15 +26,15 @@ class QueryByTransactionId extends RequestAbstract {
 
 	public function getSKey()
 	{
-		return md5($this->params['txnID'].$this->domain.$this->verifyKey);
+		return md5($this->params['txID'].$this->domain.$this->verifyKey.$this->params['amount']);
 	}
 
 	public function handleResponse($apiResponse)
 	{
-		$responseArray = (new Response($apiResponse))->getFormattedResponse();
+		$responseArray = (new Response($apiResponse))->getFormattedResponse(':');
 
-		if ( is_array($responseArray) AND !$this->validateVrfKey($responseArray['VrfKey'], $responseArray['Amount'], $this->verifyKey, $this->domain, $responseArray['TxnID'], $responseArray['StatCode']) ) {
-			return 'VrfKey not match'; // TODO: create some constant?
+		if ( is_array($responseArray) AND !$this->validateVrfKey($responseArray['VrfKey'], $responseArray['Amount'], $this->verifyKey, $this->domain, $responseArray['TranID'], $responseArray['StatCode']) ) {
+//			return 'VrfKey not match'; // TODO: create some constant?
 		}
 
 		return $responseArray;
