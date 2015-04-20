@@ -11,14 +11,14 @@ $ composer require hotel-quickly/molpay-api:@dev
 2) Register extension in your bootstrap.php
 ```php
 $configurator->onCompile[] = function ($configurator, $compiler) {
-    $compiler->addExtension('molpay-api', new \HQ\MolpayApi\MolpayApiExtension());
+    $compiler->addExtension('molpayApi', new \HQ\MolpayApi\MolpayApiExtension());
 };
 ```
 
 ### Configuration
 Add this to your config.neon
 ```yml
-molpay-api:
+molpayApi:
 	apiBaseUrl: https://www.onlinepayment.com.my/MOLPay
 	domain: abc
 	verifyKey: abc
