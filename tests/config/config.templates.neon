@@ -1,0 +1,7 @@
+molpay-api:
+	apiBaseUrl: https://www.onlinepayment.com.my/MOLPay
+	domain: abc
+	verifyKey: abc
+
+extensions:
+	molpay-api: \HQ\MolpayApi\MolpayApiExtension
