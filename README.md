@@ -1,5 +1,8 @@
 # MolpayApi
 
+[![Build Status](https://travis-ci.org/HotelQuickly/MolpayApi.svg?branch=master)](https://travis-ci.org/HotelQuickly/MolpayApi)
+
+
 ### Installation
 1) Add this repository to composer.json, or run:
 ```sh

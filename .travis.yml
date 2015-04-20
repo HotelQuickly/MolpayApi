@@ -1,0 +1,15 @@
+language: php
+php:
+  - 5.4
+
+before_script:
+  # create temp dir
+  - mkdir -p temp
+  - cp tests/config/config.template.neon tests/config/config.neon
+
+  # install dependencies
+  - composer self-update
+  - composer install --no-interaction --prefer-source
+
+# for private repos
+script: vendor/bin/tester tests/
