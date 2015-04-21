@@ -33,10 +33,6 @@ class QueryByTransactionId extends RequestAbstract {
 	{
 		$responseArray = (new Response($apiResponse))->getFormattedResponse(':');
 
-		if ( is_array($responseArray) AND !$this->validateVrfKey($responseArray['VrfKey'], $responseArray['Amount'], $this->verifyKey, $this->domain, $responseArray['TranID'], $responseArray['StatCode']) ) {
-//			return 'VrfKey not match'; // TODO: create some constant?
-		}
-
 		return $responseArray;
 	}
 }

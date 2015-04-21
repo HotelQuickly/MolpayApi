@@ -31,7 +31,7 @@ class QueryByTransactionIdTest extends BaseTestCase
 				->setParam('domain', $request->getDomain())
 				->setParam('skey', $request->getSKey());
 		});
-		
+
 		Assert::equal('4488542', $response['TranID']);
 		Assert::equal('11', $response['StatCode']);
 	}

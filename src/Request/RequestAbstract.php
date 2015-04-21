@@ -37,19 +37,6 @@ abstract class RequestAbstract {
 	abstract public function getSKey();
 	abstract public function handleResponse($response);
 
-	public function validateVrfKey($responseVrfKey)
-	{
-		$str = '';
-		for ($i = 1; $i <= func_num_args()-1; $i++) {
-			$str .= func_get_arg($i);
-		}
-
-//		var_dump($responseVrfKey);
-//		var_dump(md5($str));die();
-
-		return ($responseVrfKey == md5($str));
-	}
-
 	public function getDomain()
 	{
 		return $this->domain;

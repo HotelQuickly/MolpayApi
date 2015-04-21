@@ -43,10 +43,6 @@ class Reversal extends RequestAbstract {
 	{
 		$responseArray = (new Response($apiResponse))->getFormattedResponse('=');
 
-		if ( is_array($responseArray) AND !$this->validateVrfKey($responseArray['VrfKey'], $this->verifyKey, $this->domain, $responseArray['TxnID'], $responseArray['StatCode']) ) {
-//			return 'VrfKey not match'; // TODO: create some constant?
-		}
-
 		if ( is_array($responseArray) ) {
 			$responseArray['StatCodeMsg'] = $this->_responseStatCodeDefinition[$responseArray['StatCode']];
 		}
