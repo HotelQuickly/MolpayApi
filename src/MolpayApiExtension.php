@@ -14,7 +14,7 @@ if (!class_exists('Nette\DI\CompilerExtension')) {
 class MolpayApiExtension extends Nette\DI\CompilerExtension
 {
 	public $defaults = array(
-		'apiBaseUrl' => 'https://tap-nexus.appspot.com/api',
+		'apiBaseUrl' => 'https://www.onlinepayment.com.my/MOLPay',
 		'domain' => 'abc',
 		'verifyKey' => 'abc'
 	);

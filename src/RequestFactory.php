@@ -34,6 +34,14 @@ class RequestFactory
 	}
 
 	/**
+	 * @return string
+	 */
+	public function getVerifyKey()
+	{
+		return $this->verifyKey;
+	}
+
+	/**
 	 * @param $requestName
 	 * @return mixed
 	 */
