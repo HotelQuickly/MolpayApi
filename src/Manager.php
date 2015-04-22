@@ -26,6 +26,14 @@ class Manager {
 	}
 
 	/**
+	 * @return RequestFactory
+	 */
+	public function getRequestFactory()
+	{
+		return $this->requestFactory;
+	}
+
+	/**
 	 * @param $requestName
 	 * @param callable $callback
 	 * @return mixed
