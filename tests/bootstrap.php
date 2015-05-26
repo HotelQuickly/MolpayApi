@@ -9,5 +9,10 @@ $configurator->setTempDirectory(__DIR__ . '/../temp');
 $configurator->createRobotLoader()
 	->addDirectory(__DIR__ . '/../src')
 	->register();
-$configurator->addConfig(__DIR__ . '/config/config.neon');
+$configurator->addConfig(__DIR__ . '/config/config.neon', false);
+
+$configurator->onCompile[] = function ($configurator, $compiler) {
+	$compiler->addExtension('molpayApi', new \HQ\MolpayApi\MolpayApiExtension());
+};
+
 return $configurator->createContainer();
